@@ -286,10 +286,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <a href="page_user_profile_1.html">
                                         <i class="icon-user"></i> My Profile </a>
                                 </li>
-                                <li>
-                                    <a href="app_calendar.html">
-                                        <i class="icon-calendar"></i> My Calendar </a>
-                                </li>
+
                                 <li>
                                     <a href="app_inbox.html">
                                         <i class="icon-envelope-open"></i> My Inbox
