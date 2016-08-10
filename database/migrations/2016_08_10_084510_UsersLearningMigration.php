@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class VideosMigration extends Migration
+class UsersLearningMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,21 +12,18 @@ class VideosMigration extends Migration
      */
     public function up()
     {
-        Schema::create('videostable', function (Blueprint $table) {
+        Schema::create('UsersLearnignTable', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('url');
-            $table->integer('courceid')->unsigned()->index();
-            $table->integer('ownerid')->index()->unsigned();
-
+            $table->integer('userid')->unsigned()->index();
+            $table->integer('categoryid')->unsigned()->index();
 
 
             $table->timestamps();
-            $table->foreign('courceid')
-                ->references('id')->on('courcestable')
-                ->onDelete('cascade');
-            $table->foreign('ownerid')
+            $table->foreign('userid')
                 ->references('id')->on('users')
+                ->onDelete('cascade');
+            $table->foreign('categoryid')
+                ->references('id')->on('categoriestable')
                 ->onDelete('cascade');
         });
     }

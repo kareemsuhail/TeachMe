@@ -36,4 +36,7 @@ class User extends Authenticatable
     public function Teaching(){
         return $this->hasMany('App\ClassesModel','teacherid');
     }
+    public function Learnign(){
+        return $this->hasMany('App\UserLearningModel','userid','id');
+    }
 }
