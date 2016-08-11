@@ -52,7 +52,7 @@ class ClassController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('class.class');
     }
 
     /**

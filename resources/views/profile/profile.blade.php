@@ -128,6 +128,7 @@
                                             @if(Auth::check())
                                                 @if(Auth::user()->id == $UserData->id)
                                             <th> Edit </th>
+                                             <th>Suggestions</th>
                                                 @endif
                                                 @endif
                                         </tr>
@@ -142,6 +143,11 @@
                                                      {{csrf_field()}}
                                                       <button class="btn red-mint" type="submit">Delete</button>
                                                     {!! Form::close() !!}</td>
+                                                    <td>
+                                                        <a href="{{url('Suggestions/'.$a->name.'/'.$a->id)}}" class="btn purple">show suggestions
+                                                            <i class="fa fa-lightbulb-o"></i>
+                                                        </a>
+                                                    </td>
                                                     @endif
                                                     @endif
                                             </tr>

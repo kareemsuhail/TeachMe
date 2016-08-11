@@ -3,13 +3,13 @@
 @endsection
 @section('content')
     <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-10 col-md-offset-1">
         <!-- BEGIN PORTLET -->
         <div class="portlet light ">
             <div class="portlet-title">
                 <div class="caption caption-md">
                     <i class="icon-bar-chart theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">people who learn php</span>
+                    <span class="caption-subject font-blue-madison bold uppercase">{{"people who learn"." ".$name}}</span>
 
                 </div>
                 <div class="actions">
@@ -25,12 +25,20 @@
                     <table class="table table-hover table-light">
                         <thead>
                         <tr class="uppercase">
-                            <th colspan="2"> category</th>
+                            <th >name</th>
 
-                            <th> Edit </th>
+                            <th>profile</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($users as $user)
+                            <tr>
+
+                                <td>{{$user->name}}</td>
+                                <td><a class="btn btn-primary" href="{{url('profile/'.$user->id)}}">show profile</a></td>
+                            </tr>
+                        @endforeach
+
 
                         </tbody></table>
                 </div>
@@ -40,7 +48,7 @@
             <div class="portlet-title">
                 <div class="caption caption-md">
                     <i class="icon-bar-chart theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">classes which teach php </span>
+                    <span class="caption-subject font-blue-madison bold uppercase">{{"classes which teach"." ".$name}} </span>
 
                 </div>
                 <div class="actions">
@@ -56,12 +64,18 @@
                     <table class="table table-hover table-light">
                         <thead>
                         <tr class="uppercase">
-                            <th colspan="2"> category</th>
+                            <th >class name</th>
 
-                            <th> Edit </th>
+                            <th>show</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($classes as $class)
+                            <tr>
+                                <td>{{$class->name}}</td>
+                                <td><a class="btn btn-primary">show</a></td>
+                            </tr>
+                        @endforeach
 
                         </tbody></table>
                 </div>
@@ -71,7 +85,7 @@
             <div class="portlet-title">
                 <div class="caption caption-md">
                     <i class="icon-bar-chart theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">php courses</span>
+                    <span class="caption-subject font-blue-madison bold uppercase">{{$name." "."courses"}}</span>
 
                 </div>
                 <div class="actions">
@@ -87,12 +101,18 @@
                     <table class="table table-hover table-light">
                         <thead>
                         <tr class="uppercase">
-                            <th colspan="2"> category</th>
+                            <th >Course Name</th>
 
-                            <th> Edit </th>
+                            <th>Show</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($cources as $cource)
+                            <tr>
+                                <td>{{$cource->name}}</td>
+                                <td><a class="btn btn-primary">Show</a></td>
+                            </tr>
+                        @endforeach
 
                         </tbody></table>
                 </div>

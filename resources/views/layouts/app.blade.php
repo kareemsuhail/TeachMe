@@ -28,20 +28,20 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/global/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     @yield('css')
     <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/global/css/components.min.css')}}" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="{{url('../assets/global/css/plugins.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END THEME GLOBAL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="../assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/layouts/layout4/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="../assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/layouts/layout4/css/layout.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{url('../assets/layouts/layout4/css/themes/light.min.css')}}" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="{{url('../assets/layouts/layout4/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="favicon.ico" /> </head>
 <!-- END HEAD -->
@@ -54,7 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{url('/')}}">
-                <img src="../assets/layouts/layout4/img/logo-light.png" alt="logo" class="logo-default" /> </a>
+                <img src="{{url('../assets/layouts/layout4/img/logo-light.png')}}" alt="logo" class="logo-default" /> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
@@ -213,7 +213,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <li>
                                             <a href="#">
                                                     <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+                                                        <img src="{{url('../assets/layouts/layout3/img/avatar2.jpg')}}" class="img-circle" alt=""> </span>
                                                 <span class="subject">
                                                         <span class="from"> Lisa Wong </span>
                                                         <span class="time">Just Now </span>
@@ -224,7 +224,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <li>
                                             <a href="#">
                                                     <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+                                                        <img src="{{url('../assets/layouts/layout3/img/avatar3.jpg')}}" class="img-circle" alt=""> </span>
                                                 <span class="subject">
                                                         <span class="from"> Richard Doe </span>
                                                         <span class="time">16 mins </span>
@@ -235,7 +235,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <li>
                                             <a href="#">
                                                     <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
+                                                        <img src="{{url('../assets/layouts/layout3/img/avatar1.jpg')}}" class="img-circle" alt=""> </span>
                                                 <span class="subject">
                                                         <span class="from"> Bob Nilson </span>
                                                         <span class="time">2 hrs </span>
@@ -246,7 +246,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <li>
                                             <a href="#">
                                                     <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+                                                        <img src="{{url('../assets/layouts/layout3/img/avatar2.jpg')}}" class="img-circle" alt=""> </span>
                                                 <span class="subject">
                                                         <span class="from"> Lisa Wong </span>
                                                         <span class="time">40 mins </span>
@@ -257,7 +257,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <li>
                                             <a href="#">
                                                     <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+                                                        <img src="{{url('../assets/layouts/layout3/img/avatar3.jpg')}}" class="img-circle" alt=""> </span>
                                                 <span class="subject">
                                                         <span class="from"> Richard Doe </span>
                                                         <span class="time">46 mins </span>
@@ -281,7 +281,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <span class="username username-hide-on-mobile"> {{ Auth::user()->name }} </span>
                                 <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                                <img alt="" class="img-circle" src="../assets/layouts/layout4/img/avatar9.jpg" /> </a>
+                                <img alt="" class="img-circle" src="{{url('../assets/layouts/layout4/img/avatar9.jpg')}}" /> </a>
                             <ul class="dropdown-menu dropdown-menu-default">
                                 <li>
                                     <a href="{{url('profile/'.Auth::user()->id)}}">
@@ -400,14 +400,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="badge badge-success">8</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar3.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Bob Nilson</h4>
                                     <div class="media-heading-sub"> Project Manager </div>
                                 </div>
                             </li>
                             <li class="media">
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar1.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar1.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Nick Larson</h4>
                                     <div class="media-heading-sub"> Art Director </div>
@@ -417,14 +417,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="badge badge-danger">3</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar4.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar4.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Deon Hubert</h4>
                                     <div class="media-heading-sub"> CTO </div>
                                 </div>
                             </li>
                             <li class="media">
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar2.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar2.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Ella Wong</h4>
                                     <div class="media-heading-sub"> CEO </div>
@@ -437,7 +437,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="badge badge-warning">2</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar6.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar6.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Lara Kunis</h4>
                                     <div class="media-heading-sub"> CEO, Loop Inc </div>
@@ -448,7 +448,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="label label-sm label-success">new</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar7.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar7.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Ernie Kyllonen</h4>
                                     <div class="media-heading-sub"> Project Manager,
@@ -456,7 +456,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                             </li>
                             <li class="media">
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar8.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar8.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Lisa Stone</h4>
                                     <div class="media-heading-sub"> CTO, Keort Inc </div>
@@ -467,14 +467,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="badge badge-success">7</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar9.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar9.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Deon Portalatin</h4>
                                     <div class="media-heading-sub"> CFO, H&D LTD </div>
                                 </div>
                             </li>
                             <li class="media">
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar10.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar10.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Irina Savikova</h4>
                                     <div class="media-heading-sub"> CEO, Tizda Motors Inc </div>
@@ -484,7 +484,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="media-status">
                                     <span class="badge badge-danger">4</span>
                                 </div>
-                                <img class="media-object" src="../assets/layouts/layout/img/avatar11.jpg" alt="...">
+                                <img class="media-object" src="{{url('../assets/layouts/layout/img/avatar11.jpg')}}" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Maria Gomez</h4>
                                     <div class="media-heading-sub"> Manager, Infomatic Inc </div>
@@ -501,7 +501,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="page-quick-sidebar-chat-user-messages">
                                 <div class="post out">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Bob Nilson</a>
@@ -510,7 +510,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post in">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar2.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Ella Wong</a>
@@ -519,7 +519,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post out">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Bob Nilson</a>
@@ -528,7 +528,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post in">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar2.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Ella Wong</a>
@@ -537,7 +537,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post out">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Bob Nilson</a>
@@ -546,7 +546,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post in">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar2.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Ella Wong</a>
@@ -555,7 +555,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post out">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Bob Nilson</a>
@@ -564,7 +564,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post in">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar2.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Ella Wong</a>
@@ -573,7 +573,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </div>
                                 </div>
                                 <div class="post out">
-                                    <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                    <img class="avatar" alt="" src="{{url('../assets/layouts/layout/img/avatar3.jpg')}}" />
                                     <div class="message">
                                         <span class="arrow"></span>
                                         <a href="javascript:;" class="name">Bob Nilson</a>
@@ -916,26 +916,26 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- END FOOTER -->
 <!--[if lt IE 9]>
-<script src="../assets/global/plugins/respond.min.js"></script>
-<script src="../assets/global/plugins/excanvas.min.js"></script>
+<script src="{{url('../assets/global/plugins/respond.min.js')}}"></script>
+<script src="{{url('../assets/global/plugins/excanvas.min.js')}}"></script>
 <![endif]-->
 <!-- BEGIN CORE PLUGINS -->
-<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/js.cookie.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/jquery.blockui.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 @yield('js')
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
-<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="{{url('../assets/global/scripts/app.min.js')}}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
-<script src="../assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
-<script src="../assets/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
-<script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="{{url('../assets/layouts/layout4/scripts/layout.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/layouts/layout4/scripts/demo.min.js')}}" type="text/javascript"></script>
+<script src="{{url('../assets/layouts/global/scripts/quick-sidebar.min.js')}}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 </body>
 
