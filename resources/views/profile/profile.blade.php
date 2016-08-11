@@ -2,6 +2,10 @@
 @section('css')
     <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
     <link href="../assets/pages/css/profile.min.css" rel="stylesheet" type="text/css" />
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="../assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 
 @section('content')
@@ -35,8 +39,12 @@
                                     <i class="icon-home"></i> Overview </a>
                             </li>
                             <li>
-                                <a href="page_user_profile_1_account.html">
+                                @if(Auth::check())
+                                    @if(Auth::user()->id == $UserData->id)
+                                <a href="{{url('AccountInfo/'.$UserData->id)}}">
                                     <i class="icon-settings"></i> Account Settings </a>
+                                    @endif
+                                    @endif
                             </li>
                             <li>
                                 <a href="page_user_profile_1_help.html">
@@ -99,9 +107,14 @@
                                 </div>
                                 <div class="actions">
                                     <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                        <a href="javascript:;" class="btn btn-circle btn-sm green">Add New
-                                            <i class="fa fa-plus"></i>
-                                        </a>
+                                        @if(Auth::check())
+                                            @if(Auth::user()->id == $UserData->id)
+                                                <a data-target="#create-category" data-toggle="modal" class="btn btn-circle green">Add New                                           <i class="fa fa-plus"></i>
+                                                </a>
+                                            @endif
+                                            @endif
+
+
                                     </div>
                                 </div>
                             </div>
@@ -111,16 +124,26 @@
                                     <table class="table table-hover table-light">
                                         <thead>
                                         <tr class="uppercase">
-                                            <th colspan="2"> category</th>
-
+                                            <th > category</th>
+                                            @if(Auth::check())
+                                                @if(Auth::user()->id == $UserData->id)
                                             <th> Edit </th>
+                                                @endif
+                                                @endif
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($category as $a)
+                                        @foreach($categories as $a)
                                             <tr>
                                                 <td>{{$a->name}}</td>
-                                                <td></td>
+                                                @if(Auth::check())
+                                                @if(Auth::user()->id == $UserData->id)
+                                                <td style="align-content: center">{!! Form::open(array('url' => "UserCategory/{{$a->id}}", 'method' => 'put')) !!}
+                                                     {{csrf_field()}}
+                                                      <button class="btn red-mint" type="submit">Delete</button>
+                                                    {!! Form::close() !!}</td>
+                                                    @endif
+                                                    @endif
                                             </tr>
                                         @endforeach
 
@@ -141,7 +164,10 @@
                                 </div>
                                 <div class="actions">
                                     <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                        <a href="javascript:;" class="btn btn-circle btn-sm green">see Suggestions
+                                        <a data-target="#create-class" data-toggle="modal" class="btn btn-circle green">Create Class                                           <i class="fa fa-plus"></i>
+                                        </a>
+
+                                        <a href="javascript:;" class="btn btn-circle  purple">see Suggestions
                                             <i class="fa fa-lightbulb-o"></i>
                                         </a>
                                     </div>
@@ -159,7 +185,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($category as $a)
+                                        @foreach($classes as $a)
                                             <tr>
                                                 <td>{{$a->name}}</td>
                                                 <td></td>
@@ -203,7 +229,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($category as $a)
+                                        @foreach($categories as $a)
                                             <tr>
                                                 <td>{{$a->name}}</td>
                                                 <td></td>
@@ -244,7 +270,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($category as $a)
+                                        @foreach($categories as $a)
                                             <tr>
                                                 <td>{{$a->name}}</td>
                                                 <td></td>
@@ -265,6 +291,88 @@
             <!-- END PROFILE CONTENT -->
         </div>
     </div>
+    <!-- modals -->
+    <div id="create-class" class="modal fade" tabindex="-1" data-width="760" aria-hidden="true" style="display: none; width: 760px; margin-left: -379px; margin-top: -289px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Create class</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-body">
+                    {!! Form::open(array('url' => 'Class', 'method' => 'POST')) !!}
+
+
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-2 control-label" for="form_control_1">Class Name</label>
+                        <div class="col-md-10">
+                            <input name="name" type="text" class="form-control" id="form_control_1" placeholder="">
+                            <div class="form-control-focus"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-2 control-label" for="form_control_1">Category</label>
+                        <div class="col-md-10">
+                            <select name="categoryid" class="form-control" id="form_control_1">
+
+                                <option value="0"></option>
+                                @foreach($AllCategories as $a)
+
+                                <option value="{{$a->id}}">{{$a->name}}</option>
+                                @endforeach
+
+                            </select>
+                            <div class="form-control-focus"> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+            <button type="submit" class="btn green">Create</button>
+            {!! Form::close() !!}
+        </div>
+    </div>
+    <div id="create-category" class="modal fade" tabindex="-1" data-width="760" aria-hidden="true" style="display: none; width: 760px; margin-left: -379px; margin-top: -289px;">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title">Add Category</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-body">
+                    {!! Form::open(array('action' => 'UserCategoryController@store')) !!}
+
+
+
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-2 control-label" for="form_control_1">Category</label>
+                        <div class="col-md-10">
+                            <select name="categoryid" class="form-control" id="form_control_1">
+
+                                <option value="0"></option>
+                                @foreach($AllCategories as $a)
+
+                                    <option value="{{$a->id}}">{{$a->name}}</option>
+                                @endforeach
+
+                            </select>
+                            <div class="form-control-focus"> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+            <button type="submit" class="btn green">Create</button>
+            {!! Form::close() !!}
+        </div>
+    </div>
+
 @endsection
 @section('js')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -277,4 +385,19 @@
     <script src="../assets/pages/scripts/profile.min.js" type="text/javascript"></script>
     <script src="../assets/pages/scripts/timeline.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <!-- END THEME GLOBAL SCRIPTS -->
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- END PAGE LEVEL PLUGINS -->
 @endsection

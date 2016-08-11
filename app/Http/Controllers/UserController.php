@@ -8,18 +8,28 @@ use App\Http\Requests;
 use App\User ;
 use App\UserLearningModel ;
 use App\CategoriesModel ;
+use DB ;
 
 class UserController extends Controller
 {
   public function ShowProfile($id){
       $UserData = User::where('id',$id)->first();
-      $learning = UserLearningModel::where('userid',$UserData['id'])->lists('categoryid');
-       $category = CategoriesModel::where('id',$learning)->get();
+       $learning   = $UserData->Learnign->lists('categoryid') ;
+        $AllCategories = CategoriesModel::all();
+      $categories = DB::table('categoriestable')
+          ->whereIn('id', $learning)
+          ->get();
+      $classesid = $UserData->JoinedClasses->lists('classid');
+      $classes = DB::table('classestable')
+          ->whereIn('id', $classesid)
+          ->get();
 
+      return view('profile.profile',compact('UserData','categories','AllCategories','classes'));
 
-
-
-      return view('profile.profile',compact('UserData','category'));
+  }
+  public function AccountInfo($id){
+      $UserData = User::where('id',$id)->first();
+      return view('profile.AccountInfo',compact('UserData'));
 
   }
 }

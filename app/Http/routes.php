@@ -19,3 +19,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/profile/{id}','UserController@ShowProfile');
+Route::get('/AccountInfo/{id}','UserController@AccountInfo');
+Route::get('/Suggestions','SuggestionsController@ShowSuggestions');
+Route::resource('Category','CategoryController');
+Route::resource('UserCategory','UserCategoryController');
+Route::resource('Class','ClassController');
+Route::resource('UserLearning','UserLearningController');
