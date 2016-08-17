@@ -25,3 +25,4 @@ Route::resource('Category','CategoryController');
 Route::resource('UserCategory','UserCategoryController');
 Route::resource('Class','ClassController');
 Route::resource('UserLearning','UserLearningController');
+Route::resource('Course','CourseController');

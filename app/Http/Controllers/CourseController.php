@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\ClassesModel ;
-use Auth ;
+use App\CourcesModel ;
 
-class ClassController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,10 +37,7 @@ class ClassController extends Controller
      */
     public function store(Request $request)
     {
-        $class = $request->only(['name','categoryid']);
-        $class['teacherid'] = Auth::user()->id ;
-        ClassesModel::create($class);
-
+        //
     }
 
     /**
@@ -52,9 +48,9 @@ class ClassController extends Controller
      */
     public function show($id)
     {
-        $class = ClassesModel::where('id',$id)->first();
-
-        return view('class.class',compact('class'));
+        $course = CourcesModel::where('id',$id)->first();
+        $videos = $course->Videos()->get();
+        return view('course.course',compact('course','videos'));
     }
 
     /**

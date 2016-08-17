@@ -73,7 +73,7 @@
                         @foreach($classes as $class)
                             <tr>
                                 <td>{{$class->name}}</td>
-                                <td><a class="btn btn-primary">show</a></td>
+                                <td><a href="{{url('Class/'.$class->id)}}" class="btn btn-primary">show</a></td>
                             </tr>
                         @endforeach
 
@@ -107,10 +107,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($cources as $cource)
+                        @foreach($cources as $course)
                             <tr>
-                                <td>{{$cource->name}}</td>
-                                <td><a class="btn btn-primary">Show</a></td>
+                                <td>{{$course->name}}</td>
+                                <td><a class="btn btn-primary" href="{{url('Course/'.$course->id)}}">Show</a></td>
                             </tr>
                         @endforeach
 
