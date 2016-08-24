@@ -26,3 +26,6 @@ Route::resource('UserCategory','UserCategoryController');
 Route::resource('Class','ClassController');
 Route::resource('UserLearning','UserLearningController');
 Route::resource('Course','CourseController');
+route::get('/ids','ClassController@kareem');
+Route::post('get/msg','MessageController@getmessage');
+Route::post('message/store','MessageController@store');

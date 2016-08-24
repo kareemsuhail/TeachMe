@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\ClassesModel ;
 use Auth ;
+use App\ChatUsersModel ;
+use App\MessagesModel ;
+
+
+use DB ;
 
 class ClassController extends Controller
 {
@@ -14,7 +19,26 @@ class ClassController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
+    public  $chatusers ;
+    public $chats ;
+    public function __construct()
+    {
+        if (Auth::check()) {
+            $chatsids = ChatUsersModel::where('userid',Auth::user()->id)->lists('chatid');
+            $chats = DB::table('chattable')->select('channel')->whereIn('id',  $chatsids)->get();
+            $usersid = DB::table('chatuserstable')->where('userid', '!=', Auth::user()->id) ->whereIn('chatid', $chatsids)->lists('userid');
+            $users = DB::table('users')->select('id','name')->whereIn('id', $usersid)->get();
+            $this->chatusers = $users ;
+            $this->chats = $chats ;
+        }
+
+
+
+
+    }
+
     public function index()
     {
         //
@@ -52,9 +76,13 @@ class ClassController extends Controller
      */
     public function show($id)
     {
+
+        $chats = $this->chats ;
+        $chatusers = $this->chatusers;
+
         $class = ClassesModel::where('id',$id)->first();
 
-        return view('class.class',compact('class'));
+        return view('class.class',compact('class','chats','chatusers'));
     }
 
     /**
@@ -65,7 +93,7 @@ class ClassController extends Controller
      */
     public function edit($id)
     {
-        //
+       return $this->users ;
     }
 
     /**

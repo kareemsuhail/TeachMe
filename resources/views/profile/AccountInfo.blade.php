@@ -280,11 +280,10 @@
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
     <script src="../assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-    <script src="../assets/global/plugins/gmaps/gmaps.min.js" type="text/javascript"></script>
+
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="../assets/pages/scripts/profile.min.js" type="text/javascript"></script>
-    <script src="../assets/pages/scripts/timeline.min.js" type="text/javascript"></script>
+   <!-- <script src="../assets/pages/scripts/timeline.min.js" type="text/javascript"></script> -->
     <!-- END PAGE LEVEL SCRIPTS -->
 @endsection

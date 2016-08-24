@@ -295,6 +295,7 @@ class ComposerStaticInit07fb86c663e2738240f325f128d92e1c
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/CourseController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\SuggestionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SuggestionsController.php',
         'App\\Http\\Controllers\\UserCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserCategoryController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
